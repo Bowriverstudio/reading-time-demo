@@ -3,6 +3,7 @@ import { connect, styled } from "frontity";
 import Link from "./link";
 import List from "./list";
 import FeaturedMedia from "./featured-media";
+import ReadingTime from "@bowriverstudio/readingtime";
 
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -50,12 +51,26 @@ const Post = ({ state, actions, libraries }) => {
           </div>
         )}
       </div>
-
+      <ReadingTime theContent={post.content.rendered}></ReadingTime>
+      wordsPerMinute: 200 / imagesPerMinute:5
+      <br></br>
+      <ReadingTime
+        theContent={post.content.rendered}
+        wordsPerMinute="100"
+      ></ReadingTime>
+      - wordsPerMinute: 100 / imagesPerMinute:5
+      <br></br>
+      <ReadingTime
+        theContent={post.content.rendered}
+        imagesPerMinute="1"
+      ></ReadingTime>
+      - wordsPerMinute: 200 / imagesPerMinute 1<br></br>
+      <StyledReadingTime theContent={post.content.rendered} />- Styled with css
+      in js.
       {/* Look at the settings to see if we should include the featured image */}
       {state.theme.featured.showOnPost && (
         <FeaturedMedia id={post.featured_media} />
       )}
-
       {/* Render the content using the Html2React component so the HTML is processed
        by the processors we included in the libraries.html2react.processors array. */}
       <Content>
@@ -96,6 +111,9 @@ const DateWrapper = styled.p`
   display: inline;
 `;
 
+const StyledReadingTime = styled(ReadingTime)`
+  color: red;
+`;
 /**
  * This component is the parent of the `content.rendered` HTML. We can use nested
  * selectors to style that HTML.

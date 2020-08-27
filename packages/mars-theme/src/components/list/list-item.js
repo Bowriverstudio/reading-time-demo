@@ -2,7 +2,7 @@ import React from "react";
 import { connect, styled } from "frontity";
 import Link from "../link";
 import FeaturedMedia from "../featured-media";
-
+import ReadingTime from "@bowriverstudio/readingtime";
 /**
  * Item Component
  *
@@ -20,7 +20,6 @@ const Item = ({ state, item }) => {
       <Link link={item.link}>
         <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
       </Link>
-
       <div>
         {/* If the post has an author, we render a clickable author text. */}
         {author && (
@@ -36,6 +35,7 @@ const Item = ({ state, item }) => {
         </PublishDate>
       </div>
 
+      <ReadingTime theContent={item.content.rendered}></ReadingTime>
       {/*
        * If the want to show featured media in the
        * list of featured posts, we render the media.
@@ -43,7 +43,6 @@ const Item = ({ state, item }) => {
       {state.theme.featured.showOnList && (
         <FeaturedMedia id={item.featured_media} />
       )}
-
       {/* If the post has an excerpt (short summary text), we render it */}
       {item.excerpt && (
         <Excerpt dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }} />

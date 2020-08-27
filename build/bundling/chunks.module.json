@@ -1,0 +1,82 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.44.1",
+  "hash": "bcab7c849271642d8711",
+  "publicPath": "/static/",
+  "outputPath": "/Users/mauricetadros/local/sandbox/app/public/wp-content/themes/reading-time-demo/build/static",
+  "assetsByChunkName": {
+    "list": "list.module.js",
+    "reading-time-demo": "reading-time-demo.module.js"
+  },
+  "assets": [
+    {
+      "name": "list.module.js",
+      "size": 50276,
+      "chunks": [
+        "list"
+      ],
+      "chunkNames": [
+        "list"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "reading-time-demo.module.js",
+      "size": 5150854,
+      "chunks": [
+        "reading-time-demo"
+      ],
+      "chunkNames": [
+        "reading-time-demo"
+      ],
+      "info": {},
+      "emitted": false,
+      "isOverSizeLimit": true
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "reading-time-demo": {
+      "chunks": [
+        "reading-time-demo"
+      ],
+      "assets": [
+        "reading-time-demo.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "reading-time-demo": {
+      "chunks": [
+        "reading-time-demo"
+      ],
+      "assets": [
+        "reading-time-demo.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "list": {
+      "chunks": [
+        "list"
+      ],
+      "assets": [
+        "list.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 5,
+      "debug": false
+    }
+  },
+  "children": []
+}
